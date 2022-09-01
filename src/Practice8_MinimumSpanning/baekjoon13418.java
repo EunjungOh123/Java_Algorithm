@@ -1,7 +1,6 @@
 package Practice8_MinimumSpanning;
 
 // 오르막길 = 0, 내리막길 = 1
-// 오르막길인 경우 개수 세기
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,21 +27,23 @@ public class baekjoon13418 {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int fatigue = Integer.parseInt(st.nextToken());
-            lists[a].add(new School(b, fatigue));
+            lists[a].add(new School(b, fatigue)); // 양방향 > 한 번 내리막길은 계속 내리막길로 간주 (오르막길도 동일)
             lists[b].add(new School(a, fatigue));
         }
         int best = best(0);
         int worst = worst(0);
+        // 최악의 경로 최종 피로도 - 최선의 경로 최종 피로도
         int ans = (int) (Math.pow(worst, 2)-Math.pow(best, 2));
         System.out.println(ans);
     }
 
+    // 최선의 경로
     public static int best(int x) {
         int count = 0;
         PriorityQueue<School> queue = new PriorityQueue<>(new Comparator<School>() {
             @Override
             public int compare(School o1, School o2) {
-                return o2.fatigue-o1.fatigue; // 내리막길부터
+                return o2.fatigue-o1.fatigue; // 내리막길(1)부터
             }
         });
         visited = new boolean[n + 1];
@@ -51,7 +52,7 @@ public class baekjoon13418 {
             School school = queue.poll();
             if (!visited[school.num]) {
                 visited[school.num] = true;
-                if(school.fatigue == 0) {
+                if(school.fatigue == 0) { // 오르막길인 경우 개수 세기
                     count++;
                 }
                 for (School next : lists[school.num]) {
@@ -63,12 +64,13 @@ public class baekjoon13418 {
         }
         return count;
     }
+    // 최악의 경로
     public static int worst(int x) {
         int count = 0;
         PriorityQueue<School>queue = new PriorityQueue<>(new Comparator<School>() {
             @Override
             public int compare(School o1, School o2) {
-                return o1.fatigue-o2.fatigue; // 오르막길부터
+                return o1.fatigue-o2.fatigue; // 오르막길(0)부터
             }
         });
         visited = new boolean[n + 1];
@@ -77,7 +79,7 @@ public class baekjoon13418 {
             School school = queue.poll();
             if (!visited[school.num]) {
                 visited[school.num] = true;
-                if(school.fatigue == 0) {
+                if(school.fatigue == 0) { // 오르막길인 경우 개수 세기
                     count++;
                 }
                 for (School next : lists[school.num]) {
