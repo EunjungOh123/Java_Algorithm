@@ -1,6 +1,7 @@
 package Practice8_MinimumSpanning;
 
 // 오르막길 = 0, 내리막길 = 1
+// 오르막길인 경우 개수 세기
 
 import java.io.BufferedReader;
 import java.io.IOException;
