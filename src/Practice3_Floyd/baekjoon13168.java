@@ -45,7 +45,7 @@ public class baekjoon13168 {
 
         int k = Integer.parseInt(br.readLine()); // 교통수단의 수
 
-        // 중복되는 경로가 존재할 수 있는 경우까지 고려 > 더 적은 비용이 드는 경로 선택
+        // 중복되는 경로가 존재할 수 있는 경우까지 고려 > 더 적은 비용이 드는 경우 선택
         // 두 도시 사이를 오갈 수 있으므로 양방향
         for (int i = 0; i < k; i++) {
             st = new StringTokenizer(br.readLine(), " ");
