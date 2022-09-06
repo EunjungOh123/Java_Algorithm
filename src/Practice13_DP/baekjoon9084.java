@@ -1,5 +1,7 @@
 package Practice13_DP;
 
+// 이차원 배열을 사용한 풀이
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
