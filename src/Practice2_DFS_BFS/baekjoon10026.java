@@ -1,7 +1,7 @@
 package Practice2_DFS_BFS;
 
 // 적록색약인 경우 초록색과 빨간색을 구분하지 못함 = 하나의 구역으로 본다
-// 적록색약인 경우 dfs, 적록색약이 아닌 경우 dfs 나눠서 생각?
+// 적록색약인 경우 dfs, 적록색약이 아닌 경우 dfs 각각 나눠서 생각?
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +12,7 @@ public class baekjoon10026 {
     static String [][] grid; // 색칠한 그림을 이차원 배열로 나타낸 것
     static boolean [][] visited; // 방문 여부
     static int n;
+
     // 이동할 4가지 방향 정의 (상하 / 좌우가 겹치지 않게)
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
