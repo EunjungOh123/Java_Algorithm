@@ -1,7 +1,7 @@
 package Practice2_DFS_BFS;
 
 // 적록색약인 경우 초록색과 빨간색을 구분하지 못함 = 하나의 구역으로 본다
-// 적록색약인 경우 dfs, 적록색약이 아닌 경우 dfs 각각 나눠서 생각?
+// 적록색약인 경우 dfs, 적록색약이 아닌 경우 dfs 각각 나눠서 생각한다
 
 import java.io.BufferedReader;
 import java.io.IOException;
