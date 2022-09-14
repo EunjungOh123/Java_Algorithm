@@ -55,7 +55,7 @@ public class baekjoon1043 {
         // ex 진실을 아는 사람이 2번, 8번, 10번이고 한 파티에 참석하는 사람이 6번, 10번인 경우
         // truthPeople[2] = true, truthPeople[8] = true, truthPeople[10] = true 이다
         // parent[6] = 6, parent[10] = 6이며 10번의 부모는 6번이 된다 -> findParent(10) = 6
-        // 따라서 6번도 진실을 알 수 있는 사람이 된다
+        // 따라서 6번도 진실을 알 수 있는 사람이 된다 -> truthPeople[6] = true
         for(int i = 1; i<truthPeople.length; i++) {
             if(truthPeople[i] == true) {
                 truthPeople[findParent(i)] = true; // 진실을 아는 사람의 부모 또한 진실을 알고 있어야 한다
